@@ -40,12 +40,12 @@ $ nohup sh /mnt/arm_ssh/enable_arm_openssh.sh &
 ## Step 6: Try to Communicate with Your Board by SSH
 ```
 #login
-$ ssh root@your-board-ip -i path-to-your-public-key
+$ ssh root@your-board-ip -i path-to-your-private-key
 #ssh-tunnel
-$ ssh -p 22222 root@localhost -i path-to-your-public-key
+$ ssh -p 22222 root@localhost -i path-to-your-private-key
 #scp (not work on board)
-$ scp -r file/directory root@your-board-ip:path-on-board -i path-to-your-public-key
-$ scp -r root@your-board-ip:file/directory-on-board path-on-host -i path-to-your-public-key
+$ scp -r file/directory root@your-board-ip:path-on-board -i path-to-your-private-key
+$ scp -r root@your-board-ip:file/directory-on-board path-on-host -i path-to-your-private-key
 ```
 
 Enjoy it!
