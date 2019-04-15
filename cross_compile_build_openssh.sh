@@ -46,7 +46,12 @@ update_ssh_permission
 ifconfig lo 127.0.0.1
 
 $dst_bin_dir/sshd -f $ssh_cfg_dir/sshd_config
-$dst_bin_dir/ssh -f -N -T -R "22222:127.0.0.1:22" -o "StrictHostKeyChecking=no" -o "ServerAliveInterval=100" -i $ssh_cfg_dir/arm_ssh_private_key_rsa david@192.168.1.101
+$dst_bin_dir/ssh -f -N -T \
+-R "22222:127.0.0.1:22" \
+-o "StrictHostKeyChecking=no" \
+-o "ServerAliveInterval=100" \
+-i $ssh_cfg_dir/arm_ssh_private_key_rsa \
+david@192.168.1.101
 eof
 
 function cross_compile_build_openssh() {
