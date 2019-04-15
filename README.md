@@ -13,8 +13,12 @@ If you have an arm board (root), it is convenient to login/transfer-data with ss
 ## Step 3: Generate key & authorized_keys
 ```
 $ ssh-keygen -f ./arm_ssh_cfg/arm_ssh_private_key_rsa
-$ cat ./arm_ssh_cfg/arm_ssh_private_key_rsa.pub >> ~/.ssh/authorized_keys #tunnel with host without password on board
-$ cat path-to-your-public-key > ./arm_ssh_cfg/authorized_keys             #login in board without password on host
+
+#to tunnel with host without password on board
+$ cat ./arm_ssh_cfg/arm_ssh_private_key_rsa.pub >> ~/.ssh/authorized_keys
+
+#to login in board without password on host
+$ cat path-to-your-public-key > ./arm_ssh_cfg/authorized_keys
 ```
 
 ## Step 4: Build on Host
