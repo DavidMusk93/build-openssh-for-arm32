@@ -37,7 +37,7 @@ $ nohup sh /mnt/arm_ssh/enable_arm_openssh.sh &
 2. my host ip is `192.168.1.101`, make sure your host and board on the same net
 3. the tunnel port is `22222`
 
-## Step 6: Try to Communicate with Your Board with SSH
+## Step 6: Try to Communicate with Your Board by SSH
 ```
 #login
 $ ssh root@your-board-ip -i path-to-your-public-key
