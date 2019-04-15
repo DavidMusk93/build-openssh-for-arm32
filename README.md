@@ -17,7 +17,7 @@ $ cat ./arm_ssh_cfg/arm_ssh_private_key_rsa.pub >> ~/.ssh/authorized_keys #tunne
 $ cat path-to-your-public-key > ./arm_ssh_cfg/authorized_keys             #login in board without password on host
 ```
 
-## Step 4: Just run.sh
+## Step 4: Build on Host
 ```
 $ bash run.sh
 #arm_ssh.tar would be generated
