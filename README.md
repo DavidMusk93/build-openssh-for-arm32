@@ -45,8 +45,10 @@ $ nohup sh /mnt/arm_ssh/enable_arm_openssh.sh &
 ```
 #login
 $ ssh root@your-board-ip -i path-to-your-private-key
+
 #ssh-tunnel
 $ ssh -p 22222 root@localhost -i path-to-your-private-key
+
 #scp (not work on board)
 $ scp -r file/directory root@your-board-ip:path-on-board -i path-to-your-private-key
 $ scp -r root@your-board-ip:file/directory-on-board path-on-host -i path-to-your-private-key
