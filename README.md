@@ -1,5 +1,5 @@
 # build-openssh-for-arm32
-If you have an arm board (root), it is convenient to login/transfer-data with ssh.
+If you have an arm board (root), it is convenient to login/transfer-data by ssh.
 
 ## My Env (Step 1: Download Toolchain & Config)
 * `host`: Ubuntu 16.04
