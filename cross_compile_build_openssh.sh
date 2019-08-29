@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ./cross_compile_common.sh
+#. ./cross_compile_common.sh
 
 cat > /tmp/enable_arm_openssh.sh <<-'eof'
 #!/bin/sh
@@ -84,6 +84,7 @@ function cross_compile_build_openssh() {
     --with-ssl-dir=$openssl_arm_build_dir
 
   cross_compile_common_build 0 0 0
+  replace "PRIVSEP_PATH=$cross_compile_build_dir/empty" Makefile
   make install-files
 
   mkdir -p $output_onboard_cfg_dir

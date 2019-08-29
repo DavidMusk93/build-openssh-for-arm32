@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ./cross_compile_common.sh
+#. ./cross_compile_common.sh
 
 function clean_up() {
   rm -f /tmp/cross_compile_cmake.env

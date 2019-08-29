@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ./cross_compile_common.sh
+#. ./cross_compile_common.sh
 
 function cross_compile_build_openssl() {
   init_lib openssl
