@@ -7,8 +7,8 @@ If you have an arm board (root), it is convenient to login/transfer-data by ssh.
 
 ## Libraries Version (Step 2: Download Relevant Libraries)
 * `zlib` (1.2.11)
-* `openssl` (1.1.1b)
-* `openssh` (7.9p1, downloaded from https://www.complang.tuwien.ac.at/doc/openssh-server/faq.html)
+* `openssl` (1.1.1c)
+* `openssh` (8.0p1, downloaded from https://www.complang.tuwien.ac.at/doc/openssh-server/faq.html)
 
 ## Step 3: Generate key & authorized_keys
 ```
