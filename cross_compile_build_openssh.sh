@@ -51,11 +51,9 @@ host_key_generate() {
   cp $target_key $cache_key
 }
 
-if ! ls $dst_lib_dir | grep -qE "libssl|libcrypto|libz"; then
-  cp $src_cfg_dir/* $ssh_cfg_dir
-  cp $src_bin_dir/* $dst_bin_dir
-  cp $src_lib_dir/* $dst_lib_dir
-fi
+cp $src_cfg_dir/* $ssh_cfg_dir
+cp $src_bin_dir/* $dst_bin_dir
+cp $src_lib_dir/* $dst_lib_dir
 
 if ! ls $ssh_cfg_dir | grep -q "ssh_host"; then
   #host_key_type=('dsa' 'rsa' 'ecdsa' 'ed25519')
@@ -85,10 +83,18 @@ update_ssh_permission() {
 }
 update_ssh_permission
 
+_killall() {
+  pidof $1 || return
+  kill -9 `pidof $1`
+}
+
 ifconfig lo 127.0.0.1
 
-pidof sshd || $dst_bin_dir/sshd -f $ssh_cfg_dir/sshd_config
-pidof ssh || $dst_bin_dir/ssh -f -N -T \
+_killall ssh
+_killall sshd
+
+$dst_bin_dir/sshd -f $ssh_cfg_dir/sshd_config
+$dst_bin_dir/ssh -f -N -T \
   -R "$ssh_server_forward_port:127.0.0.1:$ssh_server_port" \
   -o "StrictHostKeyChecking=no" \
   -o "ServerAliveInterval=100" \
