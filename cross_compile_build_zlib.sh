@@ -18,8 +18,7 @@ set(CMAKE_CXX_FLAGS      "-O2 -fomit-frame-pointer -ftree-vectorize -mfpu=neon-v
 eof
 
 function cross_compile_build_zlib() {
-  init_lib zlib
-
+  [ -d $cross_compile_build_dir ] && return
   pushd zlib
   sed -i -e '/^set(VERSION/r /tmp/cross_compile_cmake.env' CMakeLists.txt
   cross_compile_common_build 1 1 1

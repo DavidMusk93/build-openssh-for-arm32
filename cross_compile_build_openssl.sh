@@ -3,10 +3,10 @@
 #. ./cross_compile_common.sh
 
 function cross_compile_build_openssl() {
-  init_lib openssl
   target_os="linux-generic32"
 
   pushd openssl
+  [ -d $cross_compile_build_dir ] && return
   ./Configure\
     $target_os\
     --prefix=$PWD/$cross_compile_build_dir\
