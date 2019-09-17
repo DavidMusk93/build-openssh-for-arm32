@@ -67,8 +67,8 @@ if ! ls $ssh_cfg_dir | grep -q "ssh_host"; then
   wait
 fi
 
-update_ssh_permission() {
-  chmod 700 /etc
+ensure_ssh_permission() {
+  chmod 755 /etc
   chmod 700 $ssh_cfg_dir
   chmod 400 $ssh_cfg_dir/authorized_keys
 
@@ -80,8 +80,10 @@ update_ssh_permission() {
 
   mkdir -p  $ssh_cfg_dir/empty
   chmod 744 $ssh_cfg_dir/empty
+
+  chmod 644 $ssh_cfg_dir/sshd_config
 }
-update_ssh_permission
+ensure_ssh_permission
 
 _killall() {
   pidof $1 || return

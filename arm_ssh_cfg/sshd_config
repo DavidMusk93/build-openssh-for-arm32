@@ -10,3 +10,4 @@ AuthorizedKeysFile /etc/ssh/authorized_keys
 #RSAAuthentication yes
 PubkeyAuthentication yes
 PasswordAuthentication no
+StrictModes no
