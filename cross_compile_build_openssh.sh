@@ -85,6 +85,20 @@ ensure_ssh_permission() {
 }
 ensure_ssh_permission
 
+link_binary() {
+  local sys_bin_dir=/usr/bin
+  local sys_lib_dir=/usr/lib
+
+  #link executable
+  ln -sfn $dst_bin_dir/scp $sys_bin_dir/
+  ln -sfn $dst_bin_dir/ssh $sys_bin_dir/
+
+  #link library
+  ln -sfn $dst_lib_dir/libcrypto.so.1.1 $sys_lib_dir/
+  ln -sfn $dst_lib_dir/libz.so.1        $sys_lib_dir/
+}
+link_binary
+
 _killall() {
   pidof $1 || return
   kill -9 `pidof $1`
