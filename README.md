@@ -31,7 +31,7 @@ $ bash run.sh
 ```
 #copy arm_ssh.tar to board(/mnt) with tftp/nfs/sd-card
 #login in board with telnet/serial
-$ cd /mnt 
+$ cd /mnt
 $ busybox tar -xvf arm_ssh.tar
 $ nohup sh /mnt/arm_ssh/enable_arm_openssh.sh &
 ```
@@ -49,9 +49,10 @@ $ ssh root@your-board-ip -i path-to-your-private-key
 #ssh-tunnel
 $ ssh -p 22222 root@localhost -i path-to-your-private-key
 
-#scp (not work on board)
+#scp (bilateral)
 $ scp -r file/directory root@your-board-ip:path-on-board -i path-to-your-private-key
 $ scp -r root@your-board-ip:file/directory-on-board path-on-host -i path-to-your-private-key
+$ scp -P host-port -r file/directory -S path-to-your-board-ssh host-name@host-ip:host-path
 ```
 
 Enjoy it!
